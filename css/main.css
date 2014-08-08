@@ -1,3 +1,62 @@
+/**************************************
+GENERAL
+**************************************/
 #wraper {
-  max-width
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/**************************************
+HEADING
+**************************************/
+#logo {
+  text-align: center;
+  margin: 0;  
+}
+
+h1 {
+  font-family: 'Changa one', sans-serif;
+  margin: 15px 0;
+  font-size: 1.75em;
+  
+}
+
+
+/**************************************
+COLOR
+**************************************/
+body {
+  background-color: white;
+  color: #999;
+}
+
+a {
+  color: #6ab47b;
+}
+
+h1, h2 {
+  color: #ffffff;
+}
+
+header {
+  background: #7BD7A0;
+  border-color: #619477
+}
+
+nav {
+  background: #619477;
+}
+
+nav a, nav a:visited {
+  color: #fff;
+}
+
+nav a.selected, nav a:hover {
+  color: #32673f;
 }
