@@ -1,4 +1,1 @@
-PersonalWebsite
-===============
-
-This is my Personal Website at seanzhang.org
+Welcome to my personal website at www.seanzhang.org
