@@ -1,0 +1,20 @@
+body {
+  font-size: 36px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 96px;
+}
+
+.category-list {
+  font-size: 48px;
+  list-style-type: none;
+}
+
+.item-list {
+  font-size: 36px;
+  list-style-type: none;
+  font-style:italic;
+  color: red;
+}
