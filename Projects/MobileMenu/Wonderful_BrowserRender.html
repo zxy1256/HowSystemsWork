@@ -1,0 +1,697 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <script src="js/handlebars-v3.0.3.js"></script>
+</head>
+<body>
+
+<div id="content">
+</div>
+
+<script id="entry-template" type="text/x-handlebars-template">
+    <h1 class="restaurant-name">{{name_ch}}</h1>
+    <ul class="category-list">
+      {{#each category_list}}
+      <li class="category">
+        <div class="category-name">
+          <div class="category-name-ch">{{this.name_ch}}</div>
+          <div class="category-name-en">{{this.name_en}}</div>
+        </div>
+        <ul class="item-list">
+          {{#each this.item_list}}
+          <li class="item">
+            <div class="item-name">
+              <div class="item-name-ch">{{this.name_ch}}</div>
+              <div class="item-name-en">{{this.name_en}}</div>
+            </div>
+            <div class="item-price">{{this.price}}</div>
+          </li>
+          {{/each}}
+        </ul>
+      {{/each}}
+    </ul>
+</script>
+
+<script type="text/javascript">
+var source   = document.getElementById("entry-template").text;
+var template = Handlebars.compile(source);
+var context = {
+  "name_ch": "菜香根",
+  "name_en": "Wonderful",
+  "category_list": [
+    {
+      "name_ch": "腊肉系列",
+      "name_en": "Hunan Smoked Pork",
+      "item_list": [
+        {
+          "name_ch": "湖南腊肉",
+          "name_en": "w. Chilli Peppers *  ",
+          "price": 15.95
+        },
+        {
+          "name_ch": "香干腊肉",
+          "name_en": "w. Smoked Tofu *  ",
+          "price": 15.95
+        },
+        {
+          "name_ch": "笋干腊肉",
+          "name_en": "w. Bamboo Shoots *  ",
+          "price": 16.95
+        },
+        {
+          "name_ch": "蒜苗腊肉",
+          "name_en": "w. Leeks  ",
+          "price": 15.95
+        },
+        {
+          "name_ch": "萝卜干腊肉",
+          "name_en": "w. Dried Radishes *  ",
+          "price": 15.95
+        },
+        {
+          "name_ch": "酸豆角腊肉",
+          "name_en": "w. Pickled Beans *  ",
+          "price": 15.95
+        }
+      ]
+    },
+    {
+      "name_ch": "小炒系列",
+      "name_en": "Stir-Fried Hunan Specials",
+      "item_list": [
+        {
+          "name_ch": "湖南小炒",
+          "name_en": "Hunan Stir Fry *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "湘味小炒羊",
+          "name_en": "Lamb and Cilantro *  ",
+          "price": 16.95
+        },
+        {
+          "name_ch": "葱爆羊肉",
+          "name_en": "Lamb and Onions  ",
+          "price": 16.95
+        },
+        {
+          "name_ch": "蒙古牛",
+          "name_en": "Mongolian Beef *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "野山椒香菜牛肉丝",
+          "name_en": "Peppered Beef w. Cilantro *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "唐芹猪肚丝",
+          "name_en": "Pork Tripe w. Chinese Celery *  ",
+          "price": 13.95
+        },
+        {
+          "name_ch": "油淋猪肚丝",
+          "name_en": "Pork Tripe w. Soybean Sprouts *  ",
+          "price": 13.95
+        },
+        {
+          "name_ch": "香辣牛肚",
+          "name_en": "Beef Tripe w. Onions and Chilli Peppers *  ",
+          "price": 15.95
+        },
+        {
+          "name_ch": "香辣回锅肉",
+          "name_en": "Twice-Cooked Pork *",
+          "price": 12.95
+        },
+        {
+          "name_ch": "小炒肉",
+          "name_en": "Hunan Pork w. Chilli *  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "辣椒炒肉丝",
+          "name_en": "Pork w. Chilli Peppers *  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "唐芹香干肉丝",
+          "name_en": "Pork and Tofu *  ",
+          "price": 13.95
+        },
+        {
+          "name_ch": "宫保鸡丁",
+          "name_en": "Kung Pao Chicken *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "宫保虾仁",
+          "name_en": "Kung Pao Prawns *  ",
+          "price": 16.95
+        },
+        {
+          "name_ch": "辣子鸡丁",
+          "name_en": "Chilli Fried Chicken *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "香辣鸡翅",
+          "name_en": "Chilli Wings *  ",
+          "price": 13.95
+        },
+        {
+          "name_ch": "辣椒炒鸡蛋",
+          "name_en": "Chilli Scrambled Eggs *  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "酸豆角炒鸡蛋",
+          "name_en": "Eggs w. Pickled Beans *  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "萝卜干炒鸡胗",
+          "name_en": "Chicken Gizzard w. Dried Radishes *  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "酸豆角炒鸡胗",
+          "name_en": "Chicken Gizzard w. Pickled Beans*  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "鱼香肉丝",
+          "name_en": "Shredded Pork w. Garlic Sauce *  ",
+          "price": 13.95
+        }
+      ]
+    },
+    {
+      "name_ch": "特色湖南系列",
+      "name_en": "Authentic Hunan",
+      "item_list": [
+        {
+          "name_ch": "毛式红烧肉",
+          "name_en": "Mao’s Braised Pork *",
+          "price": 16.95
+        },
+        {
+          "name_ch": "香辣肥肠",
+          "name_en": "Spicy Pork Intestine *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "湘味土鸡",
+          "name_en": "Hunan Chicken (bone-in) *",
+          "price": 16.95
+        },
+        {
+          "name_ch": "猪肚土鸡",
+          "name_en": "Chicken and Pork Tripe (bone-in) *",
+          "price": 18.95
+        },
+        {
+          "name_ch": "沸腾鱼片",
+          "name_en": "“Exciting” Hot Fish Fillets *",
+          "price": 19.95
+        },
+        {
+          "name_ch": "豆瓣红烧鱼",
+          "name_en": "Chilli Braised Fish *  ",
+          "price": 29.95
+        },
+        {
+          "name_ch": "麻辣豆花鱼片",
+          "name_en": "Spicy Tofu Fish Fillets *  ",
+          "price": 15.95
+        },
+        {
+          "name_ch": "湘味田鸡",
+          "name_en": "Hunan Frog w. Chilli *  ",
+          "price": 19.95
+        },
+        {
+          "name_ch": "香辣口味虾",
+          "name_en": "Hot Prawns (shell-on) *",
+          "price": 16.95
+        },
+        {
+          "name_ch": "湘味啤酒鸭",
+          "name_en": "Beer Sautéed Duck *",
+          "price": 15.95
+        },
+        {
+          "name_ch": "水煮鱼片",
+          "name_en": "Hot Boiled Fish *  ",
+          "price": 16.95
+        },
+        {
+          "name_ch": "水煮牛肉",
+          "name_en": "Hot Boiled Tender Beef *  ",
+          "price": 17.95
+        },
+        {
+          "name_ch": "水煮肥肠",
+          "name_en": "Hot Boiled Pork Intestine *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "酸辣粉皮",
+          "name_en": "Hot-n-Sour Jelly Vermicelli *",
+          "price": 13.95
+        },
+        {
+          "name_ch": "皮蛋炒辣椒",
+          "name_en": "Preserved Eggs w. Chilli *  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "家常豆腐",
+          "name_en": "“Family Tofu” w. Pork *",
+          "price": 10.95
+        },
+        {
+          "name_ch": "麻婆豆腐",
+          "name_en": "Mapo Tofu w. Pork *  ",
+          "price": 10.95
+        }
+      ]
+    },
+    {
+      "name_ch": "剁椒及蒸菜",
+      "name_en": "Steamed Specials",
+      "item_list": [
+        {
+          "name_ch": "剁椒豆腐蒸全鱼",
+          "name_en": "Whole Tilapia w. Soft Tofu and Pickled Chilli *  ",
+          "price": 31.95
+        },
+        {
+          "name_ch": "剁椒豆腐蒸鱼片",
+          "name_en": "Tilapia Fillets w. Soft Tofu and Pickled Chilli *  ",
+          "price": 23.95
+        },
+        {
+          "name_ch": "清蒸全鱼",
+          "name_en": "Whole Fish w. Ginger and Onions *  ",
+          "price": 29.95
+        },
+        {
+          "name_ch": "湘味蒸水蛋",
+          "name_en": "Hunan Egg Custard  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "薯粉蒸白菜",
+          "name_en": "Potato Noodles w. Napa Cabbage  ",
+          "price": 12.95
+        }
+      ]
+    },
+    {
+      "name_ch": "湘味干锅系列",
+      "name_en": "Hunan Iron Griddle",
+      "item_list": [
+        {
+          "name_ch": "干锅肥肠",
+          "name_en": "w. Pork Intestine *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "干锅牛肉",
+          "name_en": "w. Tender Beef *  ",
+          "price": 16.95
+        },
+        {
+          "name_ch": "干锅田鸡",
+          "name_en": "w. Fresh Frog *  ",
+          "price": 19.95
+        },
+        {
+          "name_ch": "干锅海鲜豆腐",
+          "name_en": "w. Seafood and Tofu *  ",
+          "price": 16.95
+        },
+        {
+          "name_ch": "干锅鸡翅",
+          "name_en": "w. Chicken Wings *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "干锅排骨",
+          "name_en": "w. Pork Spareribs *  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "干锅包心菜",
+          "name_en": "w. Pork and Cabbage *  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "干锅花菜腊肉",
+          "name_en": "w. Cauliflower and Smoked Pork *  ",
+          "price": 13.95
+        },
+        {
+          "name_ch": "干锅鸡胗",
+          "name_en": "w. Chicken Gizzard *  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "干锅花菜腊肉",
+          "name_en": "w. Cauliflower and Smoked Pork *  ",
+          "price": 13.95
+        },
+        {
+          "name_ch": "干锅鸡胗",
+          "name_en": "w. Chicken Gizzard *  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "干锅鸭块",
+          "name_en": "w. Duck (bone-in) *",
+          "price": 15.95
+        },
+        {
+          "name_ch": "干锅鸡块",
+          "name_en": "w. Chicken (bone-in) *",
+          "price": 15.95
+        },
+        {
+          "name_ch": "干锅莲藕",
+          "name_en": "w. Lotus Root and Pork *  ",
+          "price": 14.95
+        }
+      ]
+    },
+    {
+      "name_ch": "铁板系列",
+      "name_en": "Hunan Iron Skillet",
+      "item_list": [
+        {
+          "name_ch": "铁板牛肉",
+          "name_en": "w. Tender Beef and Onions  ",
+          "price": 15.95
+        },
+        {
+          "name_ch": "铁板鸡片",
+          "name_en": "w. Chicken and Onions  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "铁板虾仁",
+          "name_en": "w. Prawns and Onions  ",
+          "price": 17.95
+        },
+        {
+          "name_ch": "铁板鱿鱼",
+          "name_en": "w. Squid and Onions  ",
+          "price": 14.95
+        },
+        {
+          "name_ch": "铁板豆腐",
+          "name_en": "w. Fried Tofu and Onions  ",
+          "price": 12.95
+        }
+      ]
+    },
+    {
+      "name_ch": "素菜系列",
+      "name_en": "Vegetables",
+      "item_list": [
+        {
+          "name_ch": "清炒丝瓜",
+          "name_en": "Sautéed Loofah",
+          "price": 13.95
+        },
+        {
+          "name_ch": "开洋白菜",
+          "name_en": "Napa Cabbage w. Dried Shrimp  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "腊八豆大白菜",
+          "name_en": "Napa Cabbage and Beans w. Chinese Fermented Bean Sauce *  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "冬菇菜心",
+          "name_en": "Bok Choy w. Black Mushroom  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "鱼香茄子",
+          "name_en": "Eggplant w. Garlic Sauce *  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "四季豆烧茄子",
+          "name_en": "Eggplant String Beans *  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "干煸四季豆",
+          "name_en": "Dry Sautéed String Beans *",
+          "price": 11.95
+        },
+        {
+          "name_ch": "薯粉包心菜",
+          "name_en": "Cabbage w. Sweet Potato Noodles  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "老陈醋土豆丝",
+          "name_en": "Shredded Potato w. Vinegar  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "炝炒土豆丝",
+          "name_en": "Spicy Shredded Potato *  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "西红柿炒鸡蛋",
+          "name_en": "Tomato and Eggs  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "唐芹炒香干",
+          "name_en": "Celery and Smoked Tofu *  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "南瓜百合",
+          "name_en": "Lily Kabucha  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "松仁玉米",
+          "name_en": "Corn w. Pine Nuts  ",
+          "price": 12.95
+        }
+      ]
+    },
+    {
+      "name_ch": "汤类",
+      "name_en": "Soups",
+      "item_list": [
+        {
+          "name_ch": "冬瓜排骨汤",
+          "name_en": "Winter Melon and Ribs  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "鸡茸玉米汤",
+          "name_en": "Chicken and Corn  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "酸菜鱼片汤",
+          "name_en": "Sauerkraut and Fish  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "青菜豆腐汤",
+          "name_en": "Tofu and Bok Choy  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "西红柿鸡蛋汤",
+          "name_en": "Tomato and Eggs  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "酸辣汤",
+          "name_en": "Hot and Sour *  ",
+          "price": 10.95
+        }
+      ]
+    },
+    {
+      "name_ch": "米面",
+      "name_en": "Pancakes, Noodles, and Rice",
+      "item_list": [
+        {
+          "name_ch": "肉夹馍",
+          "name_en": "Chinese Pork Burger  ",
+          "price": 6.95
+        },
+        {
+          "name_ch": "葱发大饼",
+          "name_en": "Green Onion Pancake  ",
+          "price": 9.95
+        },
+        {
+          "name_ch": "湖南凉面",
+          "name_en": "Hunan Cold Noodles *  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "老北京炸酱面",
+          "name_en": "Beijing Zhajiang Mian  ",
+          "price": 11.95
+        },
+        {
+          "name_ch": "担担面",
+          "name_en": "Dan Dan Noodles *  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "炒刀削面",
+          "name_en": "Hand Cut Chao Mein w. Choice of Meat or Vegetables  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "老干爹刀削面",
+          "name_en": "Godfather’s Noodles (hand-cut noodles w. chilli and pork) *",
+          "price": 12.95
+        },
+        {
+          "name_ch": "红烧牛肉汤面",
+          "name_en": "Beef Noodle Soup  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "刀削面",
+          "name_en": "hand-cut noodles",
+          "price": 13.95
+        },
+        {
+          "name_ch": "什锦海鲜汤面",
+          "name_en": "Seafood Noodle Soup  ",
+          "price": 15.95
+        },
+        {
+          "name_ch": "肉炒面",
+          "name_en": "Chao Mein w. Choice of Meat  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "湖南腊肉炒饭",
+          "name_en": "Smoked Pork Fried Rice  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "素炒面",
+          "name_en": "Vegetable Chao Mein  ",
+          "price": 10.95
+        },
+        {
+          "name_ch": "白米饭",
+          "name_en": "Steamed White Rice  ",
+          "price": 1.95
+        }
+      ]
+    },
+    {
+      "name_ch": "冷盘",
+      "name_en": "Cold Dishes",
+      "item_list": [
+        {
+          "name_ch": "夫妻肺片",
+          "name_en": "Sliced Beef and Tendons *  ",
+          "price": 12.95
+        },
+        {
+          "name_ch": "口水鸡",
+          "name_en": "Mouth-watering Chicken (bone-in) *",
+          "price": 14.95
+        }
+      ]
+    },
+    {
+      "name_ch": "饮品",
+      "name_en": "Drinks",
+      "item_list": [
+        {
+          "name_ch": "王老吉",
+          "name_en": "Wang Lao Ji Iced Herbal Tea",
+          "price": 2.99
+        },
+        {
+          "name_ch": "可口可乐",
+          "name_en": "Wang Lao Ji Iced Herbal Tea",
+          "price": 1.99
+        },
+        {
+          "name_ch": "健怡可乐",
+          "name_en": "Diet Coke",
+          "price": 1.99
+        },
+        {
+          "name_ch": "雪碧",
+          "name_en": "Sprite",
+          "price": 1.99
+        },
+        {
+          "name_ch": "青岛啤酒",
+          "name_en": "Tsingtao Beer",
+          "price": 4.99
+        },
+        {
+          "name_ch": "北京燕京啤酒",
+          "name_en": "Beijing Yanjing Beer",
+          "price": 4.99
+        },
+        {
+          "name_ch": "蓝月亮啤酒",
+          "name_en": "Blue Moon Beer",
+          "price": 4.99
+        },
+        {
+          "name_ch": "札幌啤酒",
+          "name_en": "Sapporo Beer",
+          "price": 4.99
+        },
+        {
+          "name_ch": "喜力啤酒",
+          "name_en": "Heineken Beer",
+          "price": 4.99
+        },
+        {
+          "name_ch": "百威啤酒",
+          "name_en": "Budweiser Beer",
+          "price": 4.99
+        },
+        {
+          "name_ch": "白酒",
+          "name_en": "House White",
+          "price": 9.99
+        },
+        {
+          "name_ch": "红酒",
+          "name_en": "House Red",
+          "price": 9.99
+        }
+      ]
+    }
+  ]
+};
+var html    = template(context);
+document.getElementById("content").innerHTML = html
+</script>
+
+</body>
+</html>
