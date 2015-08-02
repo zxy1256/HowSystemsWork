@@ -24,6 +24,7 @@ body {
 }
 
 .category {
+  clear: both;
 }
 
 .category-name {
