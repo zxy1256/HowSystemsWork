@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/menu_two_column_pictures.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <h1 class="col-xs-12 restaurant-name">{{name_ch}}</h1>
+    </div>
+    {{#each category_list}}
+    <div class="row">
+      <div class="col-xs-12 category-name">
+        {{this.name_ch}}
+      </div>
+    </div>
+    <div class="row">
+      {{#each this.item_list}}
+        <div class="col-xs-6">
+          <div class="item">
+            <img src="image/Wonderful/IMG_0709.JPG" class="img-responsive" alt="Responsive image">
+            <div class="item-name-ch">{{this.name_ch}}</div>
+            <div class="item-price">{{this.price}}</div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+</body>
+</html>
